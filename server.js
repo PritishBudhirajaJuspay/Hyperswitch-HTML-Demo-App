@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 // This is your test secret API key.
-const hyper = require("@juspay-tech/orca-node")('snd_46590b6427ed4a1ab5d79a8afca46443');
+const hyper = require("@juspay-tech/hyper-node")(
+  "snd_46590b6427ed4a1ab5d79a8afca46443"
+);
 
 app.use(express.static("public"));
 app.use(express.json());
