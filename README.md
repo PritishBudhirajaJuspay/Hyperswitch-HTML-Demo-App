@@ -8,7 +8,7 @@ build and run scripts you can use to start up the application.
 1. Build the server
 
 ~~~
-npm install
+npm install or yarn
 ~~~
 
 2. Run the server
