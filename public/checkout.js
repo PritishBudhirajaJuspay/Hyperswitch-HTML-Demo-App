@@ -2,6 +2,13 @@ const hyper = StripeInstance("pk_snd_072150c83b0342d580f46107f74d4cdb");
 
 const items = [{ id: "xl-tshirt" }];
 
+const backgroundColor = (theme) => {
+  if (theme === "brutal") return "#7cff708a";
+  else if (theme === "midnight") return "#1A1F36";
+  else if (theme === "soft") return "#3E3E3E";
+  else return "#ddd8d812";
+};
+
 let elements;
 
 initialize();
@@ -22,8 +29,10 @@ async function initialize() {
   const { clientSecret } = await response.json();
 
   const appearance = {
-    theme: "orca",
+    theme: "brutal", // Theme - default, soft, brutal, midnight, none, charcoal
   };
+
+  document.body.style.background = backgroundColor(appearance.theme);
   elements = hyper.elements({ appearance, clientSecret });
 
   const paymentElementOptions = {
